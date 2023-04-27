@@ -13,12 +13,12 @@ const billItemSchema = new Schema({
     type: Number,
     required: true,
   },
-  itemdesc: {
-    type: String,
-  },
   price: {
     type: Number,
     required: true,
+  },
+  itemdesc: {
+    type: String,
   },
   amount: {
     type: String,
@@ -29,9 +29,9 @@ const billItemSchema = new Schema({
   netamount: {
     type: Number,
   },
-  gst:{
-    type: Number
-  }
+  gst: {
+    type: Number,
+  },
 });
 
 const BillItem = mongoose.model("BillItem", billItemSchema);
