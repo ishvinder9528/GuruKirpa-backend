@@ -6,8 +6,9 @@ const billItemSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Bill",
   },
-  sno: {
+  snum: {
     type: Number,
+    unique: false,
   },
   qty: {
     type: Number,
