@@ -60,7 +60,7 @@ router.post("/:shopid/add/:billid", async (req, res) => {
     console.log(req.body);
     const billItem = new BillItem({
       qty: req.body.qty,
-      sno: req.body.sno,
+      snum: req.body.snum,
       price: req.body.price,
       itemdesc: req.body.itemdesc,
       amount: req.body.amount,
