@@ -21,6 +21,8 @@ router.post("/add/:shopid", async (req, res) => {
       balanceleft: req.body.balanceleft,
       status: req.body.status,
       date: req.body.date,
+      aftergramount: req.body.aftergramount,
+      roundoffamount: req.body.roundoffamount,
     });
 
     // check Shop, it exists or not
@@ -67,6 +69,7 @@ router.post("/:shopid/add/:billid", async (req, res) => {
       discount: req.body.discount,
       netamount: req.body.netamount,
       gst: req.body.gst,
+     
 
       billid: req.params.billid,
     });
@@ -301,6 +304,8 @@ router.patch("/:shopid/edit/:billid", async (req, res) => {
       amount,
       totalamount,
       balanceleft,
+      roundoffamount,
+      aftergramount
     } = req.body;
     const newBill = {};
     if (billno) newBill.billno = billno;
@@ -314,6 +319,8 @@ router.patch("/:shopid/edit/:billid", async (req, res) => {
     if (amount) newBill.amount = amount;
     if (totalamount) newBill.totalamount = totalamount;
     if (balanceleft) newBill.balanceleft = balanceleft;
+    if(roundoffamount) newBill.roundoffamount = roundoffamount;
+    if(aftergramount) newBill.aftergramount = aftergramount;
 
     const newData = await Bill.findByIdAndUpdate(
       req.params.billid,
