@@ -56,6 +56,9 @@ const billSchema = new Schema(
     },
     aftergramount: {
       type: Number,
+    },
+    grgst:{
+      type:Number
     }
 
   },
